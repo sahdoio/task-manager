@@ -11,17 +11,17 @@ use Illuminate\Support\Facades\Validator;
 
 class TaskController extends Controller
 {
-        /**
-     * Post service
+    /**
+     * Task service
      *
-     * @var PostService
+     * @var TaskService
      */
     private TaskService $service;
 
     /**
      * Constructor method
      *
-     * @param PostService $service
+     * @param TaskService $service
      *
      * @return void
      */

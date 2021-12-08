@@ -15,8 +15,7 @@ class TaskService
     /**
      * Constructor method
      *
-     * @param Post    $post
-     * @param PostView $postView
+     * @param Task    $post
      *
      * @return void
      */
