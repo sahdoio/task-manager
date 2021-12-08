@@ -63,7 +63,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Create method
+     * Delete method
      *
      * @param Request $request
      *
@@ -72,5 +72,17 @@ class TaskController extends Controller
     public function delete(int $id): JsonResponse
     {
         return $this->service->delete($id);
+    }
+
+    /**
+     * Complete method
+     *
+     * @param Request $request
+     *
+     * @return JsonResponse
+     */
+    public function delete(int $id): JsonResponse
+    {
+        return $this->service->complete($id);
     }
 }

@@ -50,14 +50,31 @@ class TaskService
     public function delete(int $id): JsonResponse
     {
         try {
-            $flight = Task::find($id);
+            $task = Task::find($id);
 
-            if (!$flight) {
+            if (!$task) {
                 return APIResponse::notFound('Task not found');
             }
 
-            $flight->delete();
+            $task->delete();
             return APIResponse::success('Task deleted with success');
+        } catch (Exception $e) {
+            return APIResponse::serverError(__('generic.internalServerError'));
+        }
+    }
+
+    public function complete(int $id): JsonResponse
+    {
+        try {
+            $task = Task::find($id);
+
+            if (!$task) {
+                return APIResponse::notFound('Task not found');
+            }
+
+            $task->completed = true;
+            $task->save();
+            return APIResponse::success('Task deleted with success', $task->toArray());
         } catch (Exception $e) {
             return APIResponse::serverError(__('generic.internalServerError'));
         }
