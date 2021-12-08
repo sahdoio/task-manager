@@ -81,7 +81,7 @@ class TaskController extends Controller
      *
      * @return JsonResponse
      */
-    public function delete(int $id): JsonResponse
+    public function complete(int $id): JsonResponse
     {
         return $this->service->complete($id);
     }

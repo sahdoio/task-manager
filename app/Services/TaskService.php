@@ -74,7 +74,7 @@ class TaskService
 
             $task->completed = true;
             $task->save();
-            return APIResponse::success('Task deleted with success', $task->toArray());
+            return APIResponse::success('Task completed with success', $task->toArray());
         } catch (Exception $e) {
             return APIResponse::serverError(__('generic.internalServerError'));
         }

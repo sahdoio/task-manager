@@ -23,4 +23,5 @@ Route::prefix('tasks')->group(function () {
     Route::get('', [TaskController::class, 'list']);
     Route::post('', [TaskController::class, 'create']);
     Route::delete('{id}', [TaskController::class, 'delete']);
+    Route::patch('{id}', [TaskController::class, 'complete']);
 });
