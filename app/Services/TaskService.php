@@ -29,7 +29,8 @@ class TaskService
     {
         try {
             $task = Task::create([
-                'title' => $title
+                'title' => $title,
+                'completed' => false
             ]);
             return APIResponse::success('Tasks crdated with success', $task->toArray());
         } catch (Exception $e) {
